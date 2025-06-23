@@ -1,10 +1,10 @@
-import type { Config } from 'drizzle-kit';
+import type { Config } from "drizzle-kit";
 
 export default {
-  schema: './src/schema',         // folder where your schema files will go
-  out: './drizzle/migrations',    // folder for generated SQL migration files
-  driver: 'pg',
+  schema: "./src/schema",
+  out: "./drizzle/migrations",
+  dialect: "postgresql",
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL!, // or hardcode the string here
-  },
+    url: process.env.DATABASE_URL! // PostgreSQL connection string
+  }
 } satisfies Config;
